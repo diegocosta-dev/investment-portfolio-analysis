@@ -3,11 +3,8 @@ import localForage from 'localforage';
 
 import './App.css';
 
-interface Portfolio {
-  ticket: string;
-  cotas: number;
-  cotacaoAtual: number;
-}
+import { AddPortfolio } from 'components/AddPortfolio';
+import { Portfolio } from 'schema';
 
 function App() {
   const [portfolio, setPortfolio] = useState<Portfolio[]>([]);
@@ -20,6 +17,12 @@ function App() {
     }
   };
 
+  const addPortfolio = async (data: Portfolio) => {
+    const newData = [...portfolio, data];
+    setPortfolio(newData);
+    await localForage.setItem('portfolio', newData);
+  };
+
   useEffect(() => {
     getDataFromLocalForage();
     setLoading(false);
@@ -28,7 +31,7 @@ function App() {
   return (
     <>
       <h1 className="text-3xl font-bold">Investment Portfolio Analysis</h1>
-      <button type="button">Adicionar Ativo</button>
+      <AddPortfolio addPortfolio={addPortfolio} />
       {loading && <p>Loading...</p>}
       {!loading && (
         <table>
