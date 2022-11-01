@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import localForage from 'localforage';
 
-import './App.css';
+import './styles/App.css';
 
 import { AddPortfolio } from 'components/AddPortfolio';
 import { Portfolio } from 'schema';
