@@ -30,34 +30,40 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">Investment Portfolio Analysis</h1>
-      <AddPortfolio addPortfolio={addPortfolio} />
-      {loading && <p>Loading...</p>}
-      {!loading && (
-        <table>
-          <thead>
-            <tr>
-              <th>Ticket</th>
-              <th>Cotas</th>
-              <th>Cotação atual</th>
-            </tr>
-          </thead>
-          <tbody>
-            {portfolio.length === 0 && (
-              <tr>
-                <td colSpan={7}>Nenhum ativo adicionado</td>
-              </tr>
-            )}
-            {portfolio.map((item) => (
-              <tr key={item.ticket}>
-                <td>{item.ticket}</td>
-                <td>{item.cotas}</td>
-                <td>{item.cotacaoAtual}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+      <h1>Investment Portfolio Analysis</h1>
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
+          {loading && <p>Loading...</p>}
+          {!loading && (
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th className="p-2 text-base">Ticket</th>
+                    <th className="p-2 text-base">Cotas</th>
+                    <th className="p-2 text-base">Cotação atual</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {portfolio.length === 0 && (
+                    <tr>
+                      <td className='text-stone' colSpan={7}>Nenhum ativo adicionado</td>
+                    </tr>
+                  )}
+                  {portfolio.map((item) => (
+                    <tr key={item.ticket}>
+                      <td>{item.ticket}</td>
+                      <td>{item.cotas}</td>
+                      <td>{item.cotacaoAtual}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <AddPortfolio addPortfolio={addPortfolio} />
+        </div>
+      </div>
     </>
   );
 }

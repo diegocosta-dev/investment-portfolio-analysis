@@ -20,12 +20,12 @@ export const Modal = ({
 
 const Backdrop = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 flex justify-center items-center">
+    <div className="fixed top-0 left-0 w-full h-full bg-gray-dark bg-opacity-70 z-40 flex justify-center items-center">
       {children}
     </div>
   );
 };
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-  return <div className="bg-slate-800 z-50 p-4 rounded-md">{children}</div>;
+  return <div className="flex flex-col gap-2 min-w-[360px] bg-gray z-50 p-4 border border-gray-lightest">{children}</div>;
 };

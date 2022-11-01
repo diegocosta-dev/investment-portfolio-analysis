@@ -32,50 +32,47 @@ export const AddPortfolio = ({ addPortfolio }: Props) => {
 
   return (
     <>
-      <button type="button" className="button" onClick={() => setShow(true)}>
+      <button type="button" className="bg-purple p-2 hover:bg-opacity-50 transition-all ease-in-out uppercase text-stone w-full" onClick={() => setShow(true)}>
         Adicionar Ativo
       </button>
       <div>
         <Modal isVisible={show}>
-          <h3>Adicionar Ativo</h3>
+          <h2>Adicionar Ativo</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="py-1 space-x-2">
+            <div className="flex flex-col gap-1">
               <label htmlFor="ticket">Ticket</label>
               <input
                 id="ticket"
-                className="input"
                 {...register('ticket', { required: true })}
                 placeholder="ex: XPLG11"
               />
               {errors.ticket && <span>Campo Obrigatório</span>}
             </div>
-            <div className="py-1 space-x-2">
+            <div className="flex flex-col gap-1">
               <label htmlFor="cotas">Cotas</label>
               <input
                 id="cotas"
                 type="number"
-                className="input"
                 {...register('cotas', { required: true })}
                 placeholder="ex: 1"
               />
               {errors.cotas && <span>Campo Obrigatório</span>}
             </div>
-            <div className="py-1 space-x-2">
+            <div className="flex flex-col gap-1">
               <label htmlFor="cotacaoAtual">Cotacao Atual</label>
               <input
                 id="cotacaoAtual"
-                className="input"
                 type="number"
                 {...register('cotacaoAtual', { required: true })}
                 placeholder="ex: 100.00"
               />
               {errors.cotacaoAtual && <span>Campo Obrigatório</span>}
             </div>
-            <div className="pt-1 space-x-2">
-              <button type="button" className="button" onClick={handleClose}>
+            <div className="flex gap-3 justify-center items-center pt-2">
+              <button type="button" className="bg-gold w-full p-2 hover:bg-opacity-50 transition-all ease-in-out uppercase text-stone" onClick={handleClose}>
                 Cancelar
               </button>
-              <button type="submit" className="button">
+              <button type="submit" className="bg-purple w-full p-2 hover:bg-opacity-50 transition-all ease-in-out uppercase text-stone">
                 Adicionar
               </button>
             </div>

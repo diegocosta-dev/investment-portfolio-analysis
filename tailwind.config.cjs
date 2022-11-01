@@ -7,7 +7,14 @@ module.exports = {
       current: 'currentColor',
       white: '#ffffff',
       stone: '#F7F7F5',
-      darkblue: '#0f172a',
+      purple: '#6366f1',
+      gold: '#EDB52F',
+      gray: {
+        lightest: '#7b899d',
+        light: '#334155',
+        DEFAULT: '#1e293b',
+        dark: '#0f172a'
+      },
 
     },
     fontFamily: {

@@ -1,0 +1,22 @@
+@layer components {
+  table {
+    @apply table-auto border-separate border-spacing-2 w-full border border-gray-lightest bg-gray shadow-sm;
+  }
+  
+  thead {
+    @apply bg-gray-lightest p-6;
+  }
+  thead,
+  tr {
+    @apply w-1/2 border border-gray-light bg-opacity-70 text-stone text-left uppercase;
+  }
+  tbody,
+  tr {
+    @apply w-1/2 bg-opacity-70 text-stone text-left uppercase;
+  }
+  tbody,
+  tr,
+  td {
+    @apply border border-gray-lightest p-2;
+  }
+}
